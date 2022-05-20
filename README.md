@@ -1,4 +1,4 @@
-# Simple DevOps Proof of Concept
+# Simple CI/CD Pipepline for containers
 
 Problem: 
 We are being faced with the need to rework to fix bugs and errors in Agile SDLC.In many of this cases, deadlines may be fast approaching, bugs may defeinitely be piling up. 
