@@ -1,4 +1,6 @@
-# Simple DevOps Proof of Concept
+# Proof of Concept - DevOps
+
+In this project, I am going to try to leverage some of the important tools in DevOps and ensure some of the best practices. 
 
 **Problem:**
 
@@ -17,10 +19,17 @@ This enables them to fix code bugs instantly rather than waiting for the manual 
 Agile
 No Human intervention (Automated)
 Fault Isolation
-Short Mean Time To Repair
+Short Mean Time to Repair
 
-Tools: Git/GitHub, Jenkins, Git, Maven, SonarQube, AWS, EC2 Slack,
+Tools: Git/GitHub, Terraform, Jenkins, Kubernetes, Docker, Maven, SonarQube, AWS(EC2, S3, VPC,) Slack,
 
-Flow of Execution: 
-Create Key-Pairs
+**Flow of Execution:** 
+Create Key-Pairs.
 Create Security Groups for Jenkins and SonarQube.
+Launch EC2 instances for Jenkins(install Docker on server), Kops, and for SonarQube.
+Install Plugins on Jenkins - Docker pipeline, pipeline utilitity steps.
+Create Kubernetes cluster (One master and two worker nodes)
+Create Repository for Helm 
+Write Jenkins pipeline code
+Execute and troubleshoot
+Summary
