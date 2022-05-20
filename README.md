@@ -27,20 +27,13 @@ Short Mean Time to Repair
 Tools: Git/GitHub, Terraform, Jenkins, Kubernetes, Docker, Maven, SonarQube, AWS(EC2, S3, VPC,) Slack,
 
 
-**Flow of Execution:** 
-
-Create Key-Pairs.
-
-Create Security Groups for Jenkins and SonarQube.
-
-Launch EC2 instances for Jenkins(install Docker on server), Kops, and for SonarQube.
-
-Install Plugins on Jenkins - Docker pipeline, pipeline utilitity steps.
-
-Create Kubernetes cluster (One master and two worker nodes)
-
-Create Repository for Helm 
-
-Write Jenkins pipeline code<br />
-Execute and troubleshoot-
+**Flow of Execution:** <br />
+Create Key-Pairs.<br />
+Create Security Groups for Jenkins and SonarQube.<br />
+Launch EC2 instances for Jenkins(install Docker on server), Kops, and for SonarQube.<br />
+Install Plugins on Jenkins - Docker pipeline, pipeline utilitity steps.<br />
+Create Kubernetes cluster (One master and two worker nodes). <br />
+Create Repository for Helm. <br />
+Write Jenkins pipeline code.<br />
+Execute and troubleshoot.<br />
 Summary
