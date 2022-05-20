@@ -17,7 +17,7 @@ Agile.<br />
 No Human intervention (Automated).<br />
 Fault Isolation.<br />
 Short Mean Time to Repair.<br /><br />
-Tools: Git/GitHub, Terraform, Jenkins, Kubernetes, Docker, Maven, SonarQube, AWS(EC2, S3, VPC,) Slack,
+**Tools:** Git/GitHub, Terraform, Jenkins, Kubernetes, Docker, Maven, SonarQube, AWS(EC2, S3, VPC,) Slack,
 
 **Flow of Execution:** <br />
 Create Key-Pairs.<br />
