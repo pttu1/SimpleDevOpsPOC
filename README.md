@@ -17,19 +17,32 @@ This enables them to fix code bugs instantly rather than waiting for the manual 
 **Benefits:**
 
 Agile
+
 No Human intervention (Automated)
+
 Fault Isolation
+
 Short Mean Time to Repair
 
 Tools: Git/GitHub, Terraform, Jenkins, Kubernetes, Docker, Maven, SonarQube, AWS(EC2, S3, VPC,) Slack,
 
+
 **Flow of Execution:** 
+
 Create Key-Pairs.
+
 Create Security Groups for Jenkins and SonarQube.
+
 Launch EC2 instances for Jenkins(install Docker on server), Kops, and for SonarQube.
+
 Install Plugins on Jenkins - Docker pipeline, pipeline utilitity steps.
+
 Create Kubernetes cluster (One master and two worker nodes)
+
 Create Repository for Helm 
+
 Write Jenkins pipeline code
+
 Execute and troubleshoot
+
 Summary
