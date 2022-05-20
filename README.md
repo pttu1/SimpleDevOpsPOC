@@ -27,5 +27,6 @@ Install Plugins on Jenkins - Docker pipeline, pipeline utilitity steps.<br />
 Create Kubernetes cluster (One master and two worker nodes). <br />
 Create Repository for Helm. <br />
 Write Jenkins pipeline code.<br />
+Logging and Monitoring. <br />
 Execute and troubleshoot.<br />
 Summary
