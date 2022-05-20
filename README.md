@@ -41,6 +41,6 @@ Create Kubernetes cluster (One master and two worker nodes)
 
 Create Repository for Helm 
 
-Write Jenkins pipeline code
-Execute and troubleshoot
+Write Jenkins pipeline code\n
+Execute and troubleshoot\n
 Summary
