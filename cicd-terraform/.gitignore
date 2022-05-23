@@ -1,5 +1,5 @@
 # local .terraform dir
-.terraform/
+**/.terraform/*
 
 #tf state files
 *.tfstate
@@ -10,3 +10,5 @@
 
 #notes
 *.txt
+
+*.lock.hcl
