@@ -12,3 +12,5 @@
 *.txt
 
 *.lock.hcl
+
+**/keys/*
