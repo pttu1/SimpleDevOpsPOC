@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsmc
+  labels:
+    app: devopsmc
+spec:
+  selector:
+    matchLabels:
+      app: devopsmc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: devopsmc
+    spec:
+      containers:
+        - name: devopsmc
+          image: memcached
+          ports:
+            - name: devopsmc-port
+              containerPort: 11211
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devopscache01
+spec:
+  ports:
+    - port: 11211
+      targetPort: devopsmc-port
+      protocol: TCP
+  selector:
+      app: devopsmc
+  type: ClusterIP
+    

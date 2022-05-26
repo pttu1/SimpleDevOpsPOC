@@ -1,0 +1,21 @@
+template is pod definition
+specficication of the pod has the container details: name and image
+and ports. name of port and port number
+
+environment variable to read the login information of db that we have stored in Secret. We need to set the name of the variable. And get the ValueFrom secretKeyReference
+name is the metadata name of the secret and value is data.key of that secret corresponding to the database. 
+
+history | grep labels
+
+We want our pod to run in a certain node where we created our volume. 
+
+For the ebs volume name: We have to give the name of the cluster. 
+Under 'containers', map the mount the volume to the pod.
+make sure the names correspond under volmes and volumeMounts
+
+pass args to pod to avoid error lost but found...
+
+We have to create service for the db so that application pod can access it. Definition files are based on application.properties file. Especially the metadata and spec
+
+Ports being tarted. Services received request at a port and sends those requests to targetPort. 
+selector is the definition of the pod

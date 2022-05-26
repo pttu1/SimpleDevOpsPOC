@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsdb
+  labels:
+    app: devopsdb
+spec:
+  selector:
+    matchLabels:
+      app: devopsdb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: devopsdb
+    spec:
+      containers:
+        - name: devopsdb
+          image: pttu01/devopsdb:v1
+          args:
+            - "--ignore-db-dir=lost+found"
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: devops-db-data
+          ports:
+            - name: devops-db-ports
+              containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret  
+                  key: db-pass
+      nodeSelector:
+      volumes:
+        - name: devops-db-data
+          awsElasticBlockStore:
+            volumeID:
+            fsType: ext4
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devopsdb
+spec:
+  ports:  
+    - port: 3306
+      targetPort: devops-db-ports
+      protocol: TCP
+  selector:
+    app: devopsdb

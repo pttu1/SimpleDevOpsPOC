@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsapp
+  labels:
+    app: devopsapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devopsapp
+  template:
+    metadata:
+      labels:
+        app: devopsapp
+    spec:
+      containers: 
+        - name: devopsapp
+          image: pttu01/devopsapp:v1
+          ports:
+            - name: devops-app-port
+              containerPort: 8080
+      initContainers:
+        - name: init-mydb
+          image: busybox
+          command: ['sh', '-c', 'until nslookup devopsdb; do echo waiting for mydb; sleep 2; done;']
+        - name: init-memcached
+          image: busybox
+          command: ['sh', '-c', 'until nslookup devopsmc; do echo waiting for memcached; sleep 2; done;']
+
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: devopsapp
+spec:
+  ports:
+    - port: 80
+      targetPort: devops-app-port
+      protocol: TCP
+  selector:
+    app: devopsapp
+  type: LoadBalancer

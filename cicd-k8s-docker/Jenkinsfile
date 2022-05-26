@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage("Fetch code"){
+            steps{
+                git branch: 'cicd-kube', url: 'https://github.com/pttu1/SimpleDevOpsPOC.git'
+            }
+        }
+        stage('Build'){
+            steps {
+                sh 'mvn install'
+            }
+        }
+
+        stage('Test'){
+            steps{
+                sh 'mvn test'
+            }
+        }
+    }
+
+}

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsmq
+  labels:
+    app: devopsmq
+spec:
+  selector:
+    matchLabels:
+      app: devopsmq
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: devopsmq
+      spec:
+        containers:
+          - name: devopsmq
+            image:  rabbitmq
+            ports:
+              - name: devops-mq-port
+                containerPort: 15672
+            env:
+              - name: RABBIT_USER
+                value: "user"   
+              - name: RABBIT_PASS
+                valueFrom:
+                  secretKeyRef:
+                    name: app-secret
+                    key: rmq-pass
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: devopsmq
+spec:
+  ports: 
+    - port: 15672
+      targetPort: devops-mq-port
+      protocol: TCP
+  selector:
+    app: devopsmq
+  type: ClusterIP
